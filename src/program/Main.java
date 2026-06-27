@@ -31,7 +31,6 @@ public class Main {
 		 System.out.println("\n----------------------------------------------------------------------------------------------");
 
 		 
-		 		 
 		
 		 	if(escolha == '1') {
 		 		
@@ -77,7 +76,41 @@ public class Main {
 		
 		 	
 		 	else if (escolha == '2') {
+		 
+		 		for (int i = 0; i < itens.size(); i++) {
+		 			System.out.println((i + 1) + " - " + itens.get(i));
+		 		}
 		 		
+		 			while(true){
+		 			
+		 			System.out.print("\nQual item deseja alterar: ");
+		 			int opcao = sc.nextInt();
+		 			
+		 			System.out.print("Qual será o novo Preço: ");
+		 			double newPrice = sc.nextDouble();
+		 			
+		 			itens.get(opcao - 1).setPreco(newPrice);
+		 			
+		 				double total = 0;
+		 				for (Item i : itens) {
+		 					total += i.getPreco();
+		 				}
+		 			
+		 			System.out.print("\nTotal R$" + total);
+		 			System.out.println(" ");
+		 			System.out.println("\n*** Preço alterado com sucesso! ***");
+		 			
+		 			System.out.print("\n Deseja retirar um novo item? (s/n): ");
+		 			char resposta = sc.next().charAt(0);
+		 				if(resposta == 's' || resposta == 'S') {
+		 					continue;
+		 				}
+		 				else if (resposta == 'N' || resposta == 'n') {
+		 					break;
+		 				}
+		 			
+		 		
+		 			}	 		
 		 	}
 		 	
 		 	
