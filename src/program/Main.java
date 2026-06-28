@@ -31,8 +31,12 @@ public class Main {
 		 System.out.println("\n----------------------------------------------------------------------------------------------");
 
 		 
-		
-		 	if(escolha == '1') {
+		 
+		 if (escolha  < '4'){
+		 		
+		 		break;
+		 }
+		 else if(escolha == '1') {
 		 		
 		 		System.out.println("\n              === Adicionar item ===");
 		 		int n = 20;
@@ -86,7 +90,7 @@ public class Main {
 		 			System.out.print("\nQual item deseja alterar: ");
 		 			int opcao = sc.nextInt();
 		 			
-		 			System.out.print("Qual será o novo Preço: ");
+		 			System.out.print("Qual será o novo Preço: R$");
 		 			double newPrice = sc.nextDouble();
 		 			
 		 			itens.get(opcao - 1).setPreco(newPrice);
@@ -100,7 +104,7 @@ public class Main {
 		 			System.out.println(" ");
 		 			System.out.println("\n*** Preço alterado com sucesso! ***");
 		 			
-		 			System.out.print("\n Deseja retirar um novo item? (s/n): ");
+		 			System.out.print("\n Deseja Auterar um novo item? (s/n): ");
 		 			char resposta = sc.next().charAt(0);
 		 				if(resposta == 's' || resposta == 'S') {
 		 					continue;
@@ -109,13 +113,42 @@ public class Main {
 		 					break;
 		 				}
 		 			
+		 			}
+		 		}	 		
+		 	
 		 		
-		 			}	 		
+		 	
+		 	else if (escolha == '3') {
+		 		while (true) {
+		 		for (int i = 0; i < itens.size(); i++) {
+		 			System.out.println((i + 1) + " - " + itens.get(i));
+		 		
+		 	}
+		 		System.out.print("Qual item deseja remover: ");
+		 			int opcao = sc.nextInt();
+		 			
+		 			if (opcao >= 0 || opcao < itens.size()) {
+		 			    itens.remove(opcao-1).getPreco();
+		 			    System.out.println("\nItem removido!");
+		 			} else {
+		 			    System.out.println("\nÍndice inválido.");
+		 			}
+		 			
+		 			System.out.print("Deseja retirar um novo item (s/n): ");
+		 			char resposta = sc.next().charAt(0);
+		 				if (resposta == 's' || resposta == 'S') {
+		 					continue;
+		 				}
+		 				else if (resposta == 'n' || resposta == 'N') {
+		 					System.out.print("Adeus!");
+		 					break;
+		 				}
+		 }
+		 		
+		 	
 		 	}
 		 	
-		 	
-		 	
-		 	
+		 		
 		 	
 		 	else if (escolha == '4') {
 		 		System.out.println("\n Carrinho limpo com sucesso!");
@@ -127,6 +160,9 @@ public class Main {
 		 		System.out.println("\n=== Volte sempre! ===");
 		 		break;
 		 	}
+		 	
+		 		
+		 	
 		 	
 	}
 		sc.close();
