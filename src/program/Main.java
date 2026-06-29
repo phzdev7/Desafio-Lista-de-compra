@@ -13,7 +13,7 @@ public class Main {
 		 
 		while(true) {
 		
-		char escolha;
+		int escolha;
 		
 		
 		System.out.println("\n---------------------------");
@@ -27,16 +27,13 @@ public class Main {
 		System.out.println("------------------------");
 		   
 		 System.out.print("\nDigite: ");
-		 escolha = sc.next().charAt(0);
+		 escolha =  sc.nextInt();
 		 System.out.println("\n----------------------------------------------------------------------------------------------");
 
 		 
 		 
-		 if (escolha  < '4'){
-		 		
-		 		break;
-		 }
-		 else if(escolha == '1') {
+		 
+		 if(escolha == 1) {
 		 		
 		 		System.out.println("\n              === Adicionar item ===");
 		 		int n = 20;
@@ -79,7 +76,7 @@ public class Main {
 		 }
 		
 		 	
-		 	else if (escolha == '2') {
+		 	else if (escolha == 2) {
 		 
 		 		for (int i = 0; i < itens.size(); i++) {
 		 			System.out.println((i + 1) + " - " + itens.get(i));
@@ -93,7 +90,7 @@ public class Main {
 		 			System.out.print("Qual será o novo Preço: R$");
 		 			double newPrice = sc.nextDouble();
 		 			
-		 			itens.get(opcao - 1).setPreco(newPrice);
+		 			itens.get(opcao - 1);
 		 			
 		 				double total = 0;
 		 				for (Item i : itens) {
@@ -118,7 +115,7 @@ public class Main {
 		 	
 		 		
 		 	
-		 	else if (escolha == '3') {
+		 	else if (escolha == 3) {
 		 		while (true) {
 		 		for (int i = 0; i < itens.size(); i++) {
 		 			System.out.println((i + 1) + " - " + itens.get(i));
@@ -127,7 +124,7 @@ public class Main {
 		 		System.out.print("Qual item deseja remover: ");
 		 			int opcao = sc.nextInt();
 		 			
-		 			if (opcao >= 0 || opcao < itens.size()) {
+		 			if (opcao >= 0 && opcao <= itens.size()) {
 		 			    itens.remove(opcao-1).getPreco();
 		 			    System.out.println("\nItem removido!");
 		 			} else {
@@ -150,18 +147,24 @@ public class Main {
 		 	
 		 		
 		 	
-		 	else if (escolha == '4') {
+		 	else if (escolha == 4) {
 		 		System.out.println("\n Carrinho limpo com sucesso!");
 		 		itens.clear();
 		 		continue;
 		 	}
 		 	
-		 	else if(escolha == '0') {
+		 	else if(escolha == 0) {
+		 		System.out.println("\n=== Itens já disponiveis em sua sacola! === ");
 		 		System.out.println("\n=== Volte sempre! ===");
 		 		break;
 		 	}
 		 	
+		 	else {
 		 		
+		 		System.out.println("\nResposta invalida!");
+		 		
+		 		continue;
+		 }	
 		 	
 		 	
 	}
