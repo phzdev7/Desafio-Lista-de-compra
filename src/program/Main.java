@@ -12,7 +12,7 @@ public class Main {
 		ArrayList<Item> itens = new ArrayList<>();
 		 
 		while(true) {
-		
+		 
 		int escolha;
 		
 		
@@ -59,8 +59,9 @@ public class Main {
 		 		//AQUI O USER GUARDA O PRIMEIRO ITEM EM UM ARRAY, JUNTO COM NOME E PREÇO
 		 		
 		 		System.out.println("----------------------------------------------------------------------------------------");
+		 		sc.nextLine();
 		 		System.out.print("\nItem: ");  //NOME
-		 		String nome = sc.next();
+		 		String nome = sc.nextLine();
 		 		
 		 		System.out.print("Preço: R$"); //PREÇO
 		 		double preco = sc.nextDouble();
@@ -72,10 +73,16 @@ public class Main {
 		 				total += I.preco;
 		 			}
 		 			System.out.println("Total da compra Atualizado: R$" + total);
+		 			
+		 			System.out.println("\n----------------------------------------------------------------------------------------");
+		 			System.out.println(" *** Updated list ***");
+		 			for (int j = 0; j < itens.size(); j++) {
+			 			System.out.println((j + 1) + " - " + itens.get(j));
+		 			}
+		 			
 		 	}
 		 }
-		
-		 	
+		 
 		 	else if (escolha == 2) {
 		 
 		 		for (int i = 0; i < itens.size(); i++) {
@@ -90,7 +97,7 @@ public class Main {
 		 			System.out.print("Qual será o novo Preço: R$");
 		 			double newPrice = sc.nextDouble();
 		 			
-		 			itens.get(opcao - 1);
+		 			itens.get(opcao - 1).setPreco(newPrice);
 		 			
 		 				double total = 0;
 		 				for (Item i : itens) {
@@ -101,7 +108,7 @@ public class Main {
 		 			System.out.println(" ");
 		 			System.out.println("\n*** Preço alterado com sucesso! ***");
 		 			
-		 			System.out.print("\n Deseja Auterar um novo item? (s/n): ");
+		 			System.out.print("\n Deseja Alterar um novo item? (s/n): ");
 		 			char resposta = sc.next().charAt(0);
 		 				if(resposta == 's' || resposta == 'S') {
 		 					continue;
@@ -112,8 +119,6 @@ public class Main {
 		 			
 		 			}
 		 		}	 		
-		 	
-		 		
 		 	
 		 	else if (escolha == 3) {
 		 		while (true) {
@@ -144,9 +149,7 @@ public class Main {
 		 		
 		 	
 		 	}
-		 	
-		 		
-		 	
+		 		 	
 		 	else if (escolha == 4) {
 		 		System.out.println("\n Carrinho limpo com sucesso!");
 		 		itens.clear();
@@ -164,8 +167,7 @@ public class Main {
 		 		System.out.println("\nResposta invalida!");
 		 		
 		 		continue;
-		 }	
-		 	
+		 }		
 		 	
 	}
 		sc.close();
