@@ -78,9 +78,16 @@ public class Main {
 		 			System.out.println(" *** Updated list ***");
 		 			for (int j = 0; j < itens.size(); j++) {
 			 			System.out.println((j + 1) + " - " + itens.get(j));
+			 			
 		 			}
 		 			
-		 	}
+		 		}	
+			
+ 			double total = 0;
+ 			for (Item  I : itens) {
+ 				total += I.preco;
+ 			}
+		 	System.out.println("\nTotal a pagar: R$" + total);
 		 }
 		 
 		 	else if (escolha == 2) {
@@ -164,8 +171,7 @@ public class Main {
 		 	
 		 	else {
 		 		
-		 		System.out.println("\nResposta invalida!");
-		 		
+		 		System.out.println("\nResposta invalida!");		 		
 		 		continue;
 		 }		
 		 	
